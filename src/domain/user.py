@@ -5,7 +5,7 @@ from datetime import datetime
 @dataclass
 class UserEntity:
     username: str = None
-    firs_name: str = None
+    first_name: str = None
     last_name: str = None
     email: str = None
     is_staff: bool = False
@@ -16,7 +16,7 @@ class UserEntity:
 
     @property
     def fullname(self):
-        return f"{self.firs_name} {self.last_name}"
+        return f"{self.first_name} {self.last_name}"
 
     @staticmethod
     def to_string(user: "UserEntity") -> str:

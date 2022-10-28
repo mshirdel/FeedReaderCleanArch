@@ -3,3 +3,4 @@ djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
 psycopg2-binary==2.9.4
 feedparser==6.0.10
+marshmallow==3.18.0
