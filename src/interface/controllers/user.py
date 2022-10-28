@@ -29,4 +29,4 @@ class UserController:
             user = self.user_interactor.get(username)
         except EntityDoesNotExist as err:
             return {"error": err.message}, HTTPStatus.NOT_FOUND.value
-        return UserSerializer.dump(user), HTTPStatus.OK.value
+        return UserSerializer().dump(user), HTTPStatus.OK.value

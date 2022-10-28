@@ -1,5 +1,5 @@
 import os
-from feedz.settings.base import *  # noqa
+from src.infrastructure.settings.base import *  # noqa
 
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "")

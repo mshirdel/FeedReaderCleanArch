@@ -4,6 +4,7 @@ from datetime import datetime
 
 @dataclass
 class UserEntity:
+    id: int = None
     username: str = None
     first_name: str = None
     last_name: str = None
@@ -13,6 +14,7 @@ class UserEntity:
     date_joined: datetime = None
     password: str = None
     last_login: datetime = None
+    is_superuser: bool = False
 
     @property
     def fullname(self):

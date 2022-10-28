@@ -11,6 +11,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "src.infrastructure.orm.db.user",
 ]
 
 MIDDLEWARE = [
@@ -23,7 +25,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "feedz.urls"
+ROOT_URLCONF = "src.infrastructure.server.urls"
 
 TEMPLATES = [
     {
@@ -41,7 +43,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "feedz.wsgi.application"
+WSGI_APPLICATION = "src.infrastructure.server.wsgi.application"
 
 
 # Password validation
@@ -84,3 +86,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "user.User"

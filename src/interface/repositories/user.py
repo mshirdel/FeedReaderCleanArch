@@ -9,10 +9,11 @@ class UserRepository:
         self.cache_repo = cache_repo
 
     def get(self, username: str) -> UserEntity:
-        user = self.cache_repo.get(username)
+        user = self.cache_repo.get(username) if self.cache_repo else None
         if not user:
             user = self.db_repo.get(username)
-            self.cache_repo.save(user)
+            if self.cache_repo:
+                self.cache_repo.save(user)
         return user
 
     def list(self) -> List[UserEntity]:
